@@ -1,8 +1,11 @@
 from discord.ext import commands
 import API.secret as secret
 import os
+import discord
 
-bot = commands.Bot(command_prefix='Wordle ')
+intents = discord.Intents.all()
+
+bot = commands.Bot(command_prefix='Wordle ', intents=intents)
 
 
 def loadModules():
@@ -15,4 +18,4 @@ def loadModules():
 loadModules()
 
 
-bot.run(secret.DISCORD_BOT_CODE)
+bot.run(secret.WORDLE_BOT)
